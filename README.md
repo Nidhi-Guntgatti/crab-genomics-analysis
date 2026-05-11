@@ -1,67 +1,70 @@
-# 🧬 CRAB Genomics Analysis Pipeline (R)
+# CRAB Genomics Analysis Pipeline
 
-This repository contains R scripts for the analysis of **carbapenem-resistant *Acinetobacter baumannii* (CRAB)** isolates, focusing on antimicrobial resistance (AMR), mobile genetic elements (MGEs), plasmid context, and phylogenetic relationships.
+This repository contains R scripts used for the genomic analysis of carbapenem-resistant *Acinetobacter baumannii* (CRAB) isolates. The workflow integrates multiple bioinformatics outputs to investigate antimicrobial resistance (AMR) determinants, mobile genetic elements, genomic context, and population structure.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 scripts/
-├── processing/       # Data cleaning, parsing, and merging
-├── analysis/         # Core biological analyses
-└── visualization/    # Figures and plots
+├── processing/       # Data cleaning, parsing, and integration of tool outputs
+├── analysis/         # Downstream genomic and statistical analyses
+└── visualization/    # Generation of publication-ready figures
 ```
 
 ---
 
-## 🔬 Workflow Overview
+## Analytical Scope
 
-The pipeline is organized into three main stages:
+The pipeline supports the integration and interpretation of outputs from multiple tools, including:
 
-### 1. Data Processing
-
-* Cleaning and formatting outputs from:
-
-  * AMRFinder
-  * MEFinder
-  * MOB-suite
-  * APT (plasmid BLAST)
-* Standardizing sample and contig identifiers
-* Merging multi-tool outputs into unified datasets
+* AMRFinder (AMR gene detection)
+* MEFinder (mobile genetic elements)
+* MOB-suite (plasmid classification)
+* APT / BLAST-based plasmid detection
+* MLST (sequence typing)
+* PopPUNK (clonal clustering)
+* Kaptive (capsule and outer core typing)
+* Parsnp (phylogenetic reconstruction)
 
 ---
 
-### 2. Analysis
+## Core Analyses
 
-* Detection of key carbapenemase genes:
+The scripts in this repository enable:
 
-  * **blaNDM-1**
-  * **blaOXA-23**
-  * **blaOXA-66**
-* Identification of insertion sequences (IS elements)
-* Flanking region analysis (gene–IS relationships)
-* Gene distance calculations
-* Phylogenetic distance vs AMR context
-* Sequence type (ST) and clonal complex (CC) mapping
-* Capsule (KL) and outer core (OCL) typing integration
+* Identification and profiling of key carbapenemase genes
+  (*blaNDM-1, blaOXA-23, blaOXA-66*)
 
----
+* Characterization of insertion sequences and their genomic context
 
-### 3. Visualization
+* Flanking region analysis to assess gene–MGE associations
 
-* AMR gene distribution plots
-* IS co-occurrence heatmaps
-* MDR/XDR classification heatmaps
-* Gene genomic location (chromosome vs plasmid)
-* ST and CC distribution plots
-* Assembly quality visualizations
+* Contig-level integration of AMR, plasmid, and mobility information
+
+* Comparative analysis of phylogenetic distances and resistance profiles
+
+* Population structure analysis using sequence types (STs) and clonal complexes (CCs)
+
+* Integration of capsule (KL) and outer core (OCL) locus typing
 
 ---
 
-## ⚙️ Requirements
+## Output
 
-R (≥ 4.0) with the following packages:
+The workflow produces:
+
+* Integrated contig-level datasets combining multiple genomic annotations
+* Summary tables of AMR and MGE distributions
+* Quantitative analyses of gene associations and genomic context
+* Figures suitable for downstream reporting and publication
+
+---
+
+## Requirements
+
+The analysis was performed in R (≥ 4.0) using the following packages:
 
 ```r
 tidyverse
@@ -78,44 +81,33 @@ janitor
 
 ---
 
-## ▶️ Usage
+## Usage
 
-Scripts are modular and can be run independently.
+The scripts are modular and designed to be executed sequentially:
 
-Typical workflow:
+1. Data preparation and integration (`scripts/processing/`)
+2. Analytical workflows (`scripts/analysis/`)
+3. Visualization and figure generation (`scripts/visualization/`)
 
-1. Run scripts in `scripts/processing/`
-2. Perform analyses using `scripts/analysis/`
-3. Generate figures from `scripts/visualization/`
-
----
-
-## 📁 Notes
-
-* File paths in scripts use placeholders (`path/to/...`) and must be updated before execution.
-* Input data files are not included in this repository.
-* Scripts are designed for contig-level integration of multiple genomic tools.
+Users should update file paths within scripts prior to execution.
 
 ---
 
-## 👩‍🔬 Author
+## Notes
 
-**Nidhi Guntgatti**
-Bioinformatics & Genomics Analysis
-
----
-
-## 📌 Project Focus
-
-This repository supports genomic investigation of CRAB isolates to:
-
-* Understand resistance mechanisms
-* Identify mobile genetic elements driving AMR
-* Explore clonal spread and population structure
-* Integrate multiple typing and annotation tools
+* Input datasets are not included in this repository.
+* Scripts assume standardized sample identifiers across tools.
+* The workflow is designed for contig-level analyses and may require adaptation for complete genomes.
 
 ---
 
-## 📜 License
+## Author
 
-This project is for academic and research purposes.
+Nidhi Guntgatti
+Bioinformatics and Genomics
+
+---
+
+## Purpose
+
+This repository supports the genomic investigation of CRAB isolates, with emphasis on resistance mechanisms, mobile genetic elements, and clonal population structure.
