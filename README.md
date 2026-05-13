@@ -1,7 +1,5 @@
 # CRAB Genomics Analysis Pipeline (R Scripts)
 
-[[DOI](https://zenodo.org/badge/20152693.svg)](https://doi.org/10.5281/zenodo.20152693)
-
 ## Overview
 
 This repository contains R scripts developed for the genomic analysis of carbapenem-resistant *Acinetobacter baumannii* (CRAB) isolates. The workflow integrates outputs from multiple bioinformatics tools to enable comprehensive investigation of antimicrobial resistance (AMR), mobile genetic elements (MGEs), phylogenetic relationships, and population structure.
