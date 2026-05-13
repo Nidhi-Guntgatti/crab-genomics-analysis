@@ -1,6 +1,6 @@
 # CRAB Genomics Analysis Pipeline (R Scripts)
 
-[![DOI](https://zenodo.org/badge/20152693.svg)](https://doi.org/10.5281/zenodo.20152693)
+[[DOI](https://zenodo.org/badge/20152693.svg)](https://doi.org/10.5281/zenodo.20152693)
 
 ## Overview
 
