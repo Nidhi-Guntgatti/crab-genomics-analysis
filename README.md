@@ -1,12 +1,16 @@
-# CRAB Genomics Analysis Pipeline
+# CRAB Genomics Analysis Pipeline (R Scripts)
 
-This repository contains R scripts used for the genomic analysis of carbapenem-resistant *Acinetobacter baumannii* (CRAB) isolates. The workflow integrates multiple bioinformatics outputs to investigate antimicrobial resistance (AMR) determinants, mobile genetic elements, genomic context, and population structure.
+[![DOI](https://zenodo.org/badge/20152693.svg)](https://doi.org/10.5281/zenodo.20152693)
+
+## Overview
+
+This repository contains R scripts developed for the genomic analysis of carbapenem-resistant *Acinetobacter baumannii* (CRAB) isolates. The workflow integrates outputs from multiple bioinformatics tools to enable comprehensive investigation of antimicrobial resistance (AMR), mobile genetic elements (MGEs), phylogenetic relationships, and population structure.
 
 ---
 
 ## Repository Structure
 
-```text
+```
 scripts/
 ├── processing/       # Data cleaning, parsing, and integration of tool outputs
 ├── analysis/         # Downstream genomic and statistical analyses
@@ -89,25 +93,26 @@ The scripts are modular and designed to be executed sequentially:
 2. Analytical workflows (`scripts/analysis/`)
 3. Visualization and figure generation (`scripts/visualization/`)
 
-Users should update file paths within scripts prior to execution.
+File paths should be updated within scripts prior to execution.
 
 ---
 
 ## Notes
 
-* Input datasets are not included in this repository.
-* Scripts assume standardized sample identifiers across tools.
-* The workflow is designed for contig-level analyses and may require adaptation for complete genomes.
+* Input datasets are not included in this repository
+* Scripts assume standardized sample identifiers across tools
+* The workflow is designed for contig-level analyses and may require adaptation for complete genomes
 
 ---
 
 ## Author
 
-Nidhi Guntgatti
-Bioinformatics and Genomics
+**Nidhi Guntgatti**
 
 ---
 
-## Purpose
+## Citation
 
-This repository supports the genomic investigation of CRAB isolates, with emphasis on resistance mechanisms, mobile genetic elements, and clonal population structure.
+If you use this repository, please cite:
+
+Guntgatti, N. (2026). *CRAB Genomics Analysis Pipeline (R Scripts)* (v1.1). Zenodo. https://doi.org/10.5281/zenodo.20152693
